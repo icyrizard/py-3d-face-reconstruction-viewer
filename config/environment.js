@@ -7,6 +7,9 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
+      EXTEND_PROTOTYPES: {
+          Date: false,
+      },
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -20,7 +23,10 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.staticURL = 'http://localhost:8888/data/';
+    ENV.APP.websocketsURL = '';
+    ENV.APP.staticURL = '';
+    ENV.APP.APIURL = '';
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -41,7 +47,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.websocketsURL = '';
+    ENV.APP.staticURL = ';
+    ENV.APP.APIURL  = '';
+    ENV.baseURL = '/face-reconstruction/';
+    ENV.rootURL = '/face-reconstruction/';
   }
 
   return ENV;
