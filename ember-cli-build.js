@@ -4,21 +4,30 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+    sourcemaps: { enabled: true, extensions: ['js']},
+    minifyJS: {
+        enabled: false
+    },
+    minifyCSS: {
+        enabled: false
+    },
+    fingerprint: {
+        enabled: true
+    }
   });
 
   // bower compoenents
-  app.import('bower_components/basscss/modules/align/index.css');
-  app.import('bower_components/basscss/modules/border/index.css');
-  app.import('bower_components/basscss/modules/flexbox/index.css');
-  app.import('bower_components/basscss/modules/grid/index.css');
-  app.import('bower_components/basscss/modules/hide/index.css');
-  app.import('bower_components/basscss/modules/layout/index.css');
-  app.import('bower_components/basscss/modules/margin/index.css');
-  app.import('bower_components/basscss/modules/padding/index.css');
-  app.import('bower_components/basscss/modules/position/index.css');
-  app.import('bower_components/basscss/modules/type-scale/index.css');
-  app.import('bower_components/basscss/modules/typography/index.css');
+  //app.import('bower_components/basscss/modules/align/index.css');
+  //app.import('bower_components/basscss/modules/border/index.css');
+  //app.import('bower_components/basscss/modules/flexbox/index.css');
+  //app.import('bower_components/basscss/modules/grid/index.css');
+  //app.import('bower_components/basscss/modules/hide/index.css');
+  //app.import('bower_components/basscss/modules/layout/index.css');
+  //app.import('bower_components/basscss/modules/margin/index.css');
+  //app.import('bower_components/basscss/modules/padding/index.css');
+  //app.import('bower_components/basscss/modules/position/index.css');
+  //app.import('bower_components/basscss/modules/type-scale/index.css');
+  //app.import('bower_components/basscss/modules/typography/index.css');
 
   // npm modules
   //app.import('node_modules/basscss-responsive-margin/css/responsive-margin.css');

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import ENV from 'viewer/config/environment';
 
 const { get, inject } = Ember;
 
@@ -19,7 +20,7 @@ export default Ember.Controller.extend({
     socketRef: null,
 
     init() {
-        const socket = get(this, 'websockets').socketFor('ws://localhost:8888/reconstruction');
+        const socket = get(this, 'websockets').socketFor(ENV.APP.websocketsURL);
 
         socket.on('open', this.openHandler, this);
         socket.on('message', this.messageHandler, this);

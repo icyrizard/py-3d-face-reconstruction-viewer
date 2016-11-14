@@ -7,6 +7,9 @@ module.exports = function(environment) {
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
+      EXTEND_PROTOTYPES: {
+          Date: false,
+      },
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
@@ -20,7 +23,10 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.staticURL = 'http://localhost:8888/data/';
+    ENV.APP.websocketsURL = 'ws://localhost:6930/reconstruction';
+    ENV.APP.staticURL = 'http://localhost:6930/data/';
+    ENV.APP.APIURL = 'http://localhost:6930';
+
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
@@ -41,7 +47,11 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.APP.websocketsURL = 'wss://richard.kompiler.org/reconstruction';
+    ENV.APP.staticURL = 'https://richard.kompiler.org/data/';
+    ENV.APP.APIURL  = 'https://richard.kompiler.org';
+    ENV.baseURL = '/face-reconstruction/';
+    ENV.rootURL = '/face-reconstruction/';
   }
 
   return ENV;
