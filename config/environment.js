@@ -23,9 +23,9 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    ENV.APP.websocketsURL = 'ws://localhost:6930/reconstruction';
-    ENV.APP.staticURL = 'http://localhost:6930/data/';
-    ENV.APP.APIURL = 'http://localhost:6930';
+    ENV.APP.websocketsURL = '';
+    ENV.APP.staticURL = '';
+    ENV.APP.APIURL = '';
 
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
@@ -47,9 +47,9 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.APP.websocketsURL = 'wss://richard.kompiler.org/reconstruction';
-    ENV.APP.staticURL = 'https://richard.kompiler.org/data/';
-    ENV.APP.APIURL  = 'https://richard.kompiler.org';
+    ENV.APP.websocketsURL = '';
+    ENV.APP.staticURL = ';
+    ENV.APP.APIURL  = '';
     ENV.baseURL = '/face-reconstruction/';
     ENV.rootURL = '/face-reconstruction/';
   }

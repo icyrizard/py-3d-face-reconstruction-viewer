@@ -16,7 +16,8 @@ module.exports = function(defaults) {
     }
   });
 
-  // bower compoenents
+  // bower components
+  // TODO: fix loading bascss locally instead of including it in the index.html.
   //app.import('bower_components/basscss/modules/align/index.css');
   //app.import('bower_components/basscss/modules/border/index.css');
   //app.import('bower_components/basscss/modules/flexbox/index.css');
